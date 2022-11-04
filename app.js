@@ -2,7 +2,7 @@
 const pessoas= ["Louise", "Ruth", "Paulo", "Maria Pacheco", "Maria Eduarda", "Guilherme"
 , "Emanueli", "Joaquin", "Henrique", "Karen", "Gabriel", "Samile", "Thaynara", "Ingrid"
 , "Melissa", "Claun", "Caroline", "Carol Madrado", "Adickson", "Felipe", "Victor", "Roberna",
-"Isnan", "Cleiton", "David", "Rainae", "Roberta", "Alonso", "Guilherme", "Cristiano", "Cailane"]
+"Isnan", "Cleiton", "David", "Rainae", "Roberta", "Alonso", "Joao", "Cristiano", "Cailane"]
 
 
 
@@ -13,6 +13,5 @@ function app(pessoas=[], div=2){
     else if(div == 2)
        return divisor.divisaoPorDois(pessoas)
 }
-
 
 console.log(app(pessoas))

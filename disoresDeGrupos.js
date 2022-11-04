@@ -1,4 +1,12 @@
 const aleatoryNum = (min=0, max=30) => (Math.random()* (max - min) + min).toFixed(0)
+const verify = (arrayBase=[], element ) => (arrayBase.indexOf(element) != -1)
+
+function resolverExistente(vet = [], atual=0){
+    if(verify(vet, atual) == false)
+        return atual
+    else
+        return resolverExistente(vet, (atual+1))
+}
 
 function divisaoPorDois(pessoas=[]){
     let vet = []
@@ -11,28 +19,33 @@ function divisaoPorDois(pessoas=[]){
     }
 
     for(let x = 0; x<(pessoas.length/2);x++){
-        num = aleatoryNum(0, (pessoas.length -1 ))
-        if(x==0 || vet.indexOf(num)!=-1)
-            grupo1.push(pessoas[num])
-        else{
-            while (vet.indexOf==-1) {
-                num = aleatoryNum(0, (pessoas.length-1))
-            }
-            grupo1.push(pessoas[num])
-        }
 
         num = aleatoryNum(0, (pessoas.length -1 ))
-        if(vet.indexOf(num)!=-1)
+        if(verify(vet, num)){
             grupo1.push(pessoas[num])
+            vet.push(num)
+        }
         else{
-            while (vet.indexOf==-1) {
-                num = aleatoryNum(0, (pessoas.length-1))
-            }
+            num = resolverExistente(vet)
+            grupo1.push(pessoas[num])
+            vet.push(num)
+        }
+
+
+        num = aleatoryNum(0, (pessoas.length -1 ))
+        if(verify(vet, num)){
+            vet.push(num)
             grupo2.push(pessoas[num])
+        }
+        else{
+            num = resolverExistente(vet)
+            grupo2.push(pessoas[num])
+            vet.push(num)
         }
     }
 
     return [grupo1,grupo2]
 }
+
 
 module.exports = {divisaoPorDois}
