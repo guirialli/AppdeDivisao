@@ -9,7 +9,7 @@ const pessoas = ["Louise", "Ruth", "Paulo", "Maria Pacheco", "Maria Eduarda", "G
 function selectorDeGrupos(pessoas = [], div = 2) {
    const divisor = require('./disoresDeGrupos')
    if (div <= 1)
-      return pessoas
+      return [pessoas]
    else if (div == 2)
       return divisor.divisaoPorDois(pessoas)
    else if (div == 3)
@@ -30,6 +30,7 @@ function selectorDeGrupos(pessoas = [], div = 2) {
       return divisor.divisaoPorDez(pessoas)
    else if (div == 11)
       return divisor.divisaoPorOnze(pessoas)
+   return []
 }
 
-console.log(selectorDeGrupos(pessoas,11))
+module.exports = {selectorDeGrupos}
