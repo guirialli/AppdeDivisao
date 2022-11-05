@@ -1,4 +1,3 @@
-
 function getPessoas(){
     return ["Louise", "Ruth", "Paulo", "Maria Pacheco", "Maria Eduarda", "Guilherme"
     , "Emanueli", "Joaquin", "Henrique", "Karen", "Gabriel", "Samile", "Thaynara", "Ingrid"
