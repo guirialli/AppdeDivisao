@@ -1,2 +1,4 @@
-teste.js
-*.txt 
+testes/
+*.txt
+.images/ 
+node_modules/
